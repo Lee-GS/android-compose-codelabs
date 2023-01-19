@@ -22,9 +22,30 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+@Composable
+fun WellnessTaskItem(
+    modifier: Modifier = Modifier,
+    taskName: String,
+    onClose: () -> Unit
+) {
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(text = taskName, modifier = Modifier
+            .padding(start = 16.dp)
+            .weight(1F))
+        IconButton(onClick = onClose) {
+            Icon(imageVector = Icons.Filled.Close, contentDescription = "Close" )
+        }
+    }
+
+
+}
