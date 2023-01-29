@@ -23,5 +23,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun WellnessScreen(modifier: Modifier = Modifier){
-    StatefulCounter(modifier)
+    Column(modifier = modifier) {
+        StatefulCounter()
+        WellnessTasksList()
+    }
 }
