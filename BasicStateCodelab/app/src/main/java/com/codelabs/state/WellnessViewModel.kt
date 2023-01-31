@@ -26,6 +26,10 @@ class WellnessViewModel : ViewModel(){
     fun remove(item: WellnessTask){
         _tasks.remove(item)
     }
+    fun changeTaskChecked(item: WellnessTask, checked: Boolean) =
+        tasks.find { it.id == item.id }?.let { task ->
+            task.checked = checked
+        }
 }
 
 
